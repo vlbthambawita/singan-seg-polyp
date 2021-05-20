@@ -1,3 +1,0 @@
-
-How to convert to jit
-https://github.com/pytorch/pytorch/issues/18325

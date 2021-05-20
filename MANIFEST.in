@@ -1,1 +1,1 @@
-include singan_polyp_aug/config.yaml
+include singan_seg_polyp/config.yaml
