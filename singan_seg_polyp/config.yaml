@@ -1,0 +1,12 @@
+
+# Dropbox links to download files
+# last digit of dropbox links should be chnaged to 1 to download
+links:
+    link1: https://www.dropbox.com/s/19xq87x4xanuy4t/TrainedModels_1_clean.zip?dl=1
+    link2: https://www.dropbox.com/s/0i7io4tkpoccmq4/TrainedModels_2_clean.zip?dl=1 
+    link3: https://www.dropbox.com/s/hsdpkifid9prtst/TrainedModels_3_clean.zip?dl=1
+    link4: https://www.dropbox.com/s/hzu470zcmy5ygf1/TrainedModels_4_clean.zip?dl=1
+
+real_data_links:
+    images_link: https://www.dropbox.com/s/2hy9vn76olb46hy/real_images.zip?dl=1
+    masks_link: https://www.dropbox.com/s/5783y9n8b7nlz76/real_masks.zip?dl=1

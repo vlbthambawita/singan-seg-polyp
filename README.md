@@ -1,0 +1,164 @@
+# singan-polyp-aug
+
+## Install pip singan-polyp-aug
+```shell
+pip install singan-polyp-aug
+```
+
+## Import required packages
+```python
+from singan_polyp_aug import generate_data, prepare_requirements
+```
+---
+## Prepare checkpoints
+```python
+>>> help(prepare_requirements.prepare_checkpoints)
+Help on function prepare_checkpoints in module singan_polyp_aug.prepare_requirements:
+
+prepare_checkpoints(path_to_checkpoints: str, link_keys=["link1", "link2", "link3", "link4"], real_data=True, *args, **kwargs) -> str
+```
+
+```python
+out_paths = prepare_requirements.prepare_checkpoints("./singan_polyp_checkpoints", link_keys=["link1", "link2", "link3", "link4"])
+```
+### Parameters
+- path_to_checkpoints -- A path to save checkpoints. The prepare_checkpoints() function checks the availability of pre-downloaded checkpoints. So, the use can run the save command twice without any downlaod overhead. 
+
+- link_keys -- A list of pre-defined keys to download links. To download the full checkpoint list, use link_keys=["link1", "link2", "link3", "link4"]. If the user needs only a half of check points, then, the user can use only a half of link_keys. For example, link_keys= ["link1", "link2"]
+
+- real_data -- If this is True, real images and masks used to train SinGANs will be downloaded into the checkpoint folder. 
+
+### Return
+This function returns a list of paths to all downloaded checkpoints to use with other functions of singan_polyp_aug. If the all checkpoints are used, then the function returns 1000 different sinGAN checkpoint paths which are dirrecting to pre-trained SinGAN checkpoints of the 1000 polyp images introduced in Hyper-kvasir dataset. 
+
+----
+
+
+## Generate synthetic polyps and corresponding mask
+
+
+```python
+generate_data.generate_from_single_checkpoint(out_dir:str, 
+                                    checkpoint_path:str, 
+                                    num_samples:int=1, 
+                                    gen_start_scale:int=5,
+                                    mask_post_processing:bool=True) -> None:
+    ''' A function to generate synthetic polyp and correspondign mask from a given checkpoint path.
+
+    Parameters
+    ----------
+    out_dir: str
+        A path to save output data.
+    checkpoint_path: str
+        A path to a downloaded checkpoint. To get paths, you have to run prepare_requirements.prepare_checkpoints() function.
+    num_samples: int
+        Number of random samples to generate from the given checkpoint. Default=1.
+    gen_start_scale: int
+        Predefined scales used in SinGAN training. You can use values between 0-9. Value 0 generates more random samples and value 9 generate sampels which are 
+        very close to the training image.
+    mask_post_processing: bool
+        Whether the generated mask should be post processed or not. If True, generates mask is cleaned to have only 0 and 255. 
+    
+    Returns
+    ------
+    None
+        This function does not have a return. 
+
+    '''
+```
+
+```python
+generate_data.generate_from_multiple_checkpoints(out_dir:str, checkpoint_paths:list, *args, **kwargs)-> None:
+    ''' A function to generate synthetic polyp and correspondign mask from a given list of checkpoint paths.
+
+    Parameters
+    ----------
+    out_dir: str
+        A path to save output data.
+    checkpoint_paths: list
+        A path list to downloaded checkpoints. To get paths, you have to run prepare_requirements.prepare_checkpoints() function.
+    num_samples: int
+        Number of random samples to generate from the given checkpoint. Default=1.
+    gen_start_scale: int
+        Predefined scales used in SinGAN training. You can use values between 0-9. Value 0 generates more random samples and value 9 generate sampels which are 
+        very close to the training image.
+    mask_post_processing: bool
+        Whether the generated mask should be post processed or not. If True, generates mask is cleaned to have only 0 and 255. 
+    
+    Returns
+    ------
+    None
+        This function does not have a return. 
+
+    '''
+```
+
+```python
+generate_data.generate_simple(out_dir:str, chk_dir:str, *args, **kwargs)-> None:
+    ''' A function to generate synthetic polyp and correspondign mask from all downloaded checkpoint paths.
+
+    Parameters
+    ----------
+    out_dir: str
+        A path to save output data.
+    chk_dir: str
+        The path to checkpoint directory. If the directory does not have downloaded checkpoints, this function will download them.
+    num_samples: int
+        Number of random samples to generate from the given checkpoint. Default=1.
+    gen_start_scale: int
+        Predefined scales used in SinGAN training. You can use values between 0-9. Value 0 generates more random samples and value 9 generate sampels which are 
+        very close to the training image.
+    mask_post_processing: bool
+        Whether the generated mask should be post processed or not. If True, generates mask is cleaned to have only 0 and 255. 
+    
+    Returns
+    ------
+    None
+        This function does not have a return. 
+
+    '''
+```
+
+
+## Simple generation function
+
+
+----
+### Citation:
+```
+TBA
+```
+
+### References:
+```
+
+@article{cite-key,
+	da = {2020/08/28},
+	date-added = {2021-03-27 01:08:18 +0100},
+	date-modified = {2021-03-27 01:08:18 +0100},
+	doi = {10.1038/s41597-020-00622-y},
+	id = {Borgli2020},
+	isbn = {2052-4463},
+	journal = {Scientific Data},
+	number = {1},
+	pages = {283},
+	title = {HyperKvasir, a comprehensive multi-class image and video dataset for gastrointestinal endoscopy},
+	ty = {JOUR},
+	url = {https://doi.org/10.1038/s41597-020-00622-y},
+	volume = {7},
+	year = {2020},
+	Bdsk-Url-1 = {https://doi.org/10.1038/s41597-020-00622-y}}
+
+@inproceedings{shaham2019singan,
+  title={Singan: Learning a generative model from a single natural image},
+  author={Shaham, Tamar Rott and Dekel, Tali and Michaeli, Tomer},
+  booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision},
+  pages={4570--4580},
+  year={2019}
+}
+
+```
+
+## Contacts:
+
+### <vajira@simula.no> or <michael@simula.no>
