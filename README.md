@@ -12,10 +12,27 @@ from singan_seg_polyp import generate_data, prepare_requirements
 ---
 ## Prepare checkpoints
 ```python
->>> help(prepare_requirements.prepare_checkpoints)
-Help on function prepare_checkpoints in module singan_polyp_aug.prepare_requirements:
+Help on function prepare_checkpoints in module singan_seg_polyp.prepare_requirements:
 
-prepare_checkpoints(path_to_checkpoints: str, link_keys=["link1", "link2", "link3", "link4"], real_data=True, *args, **kwargs) -> str
+prepare_checkpoints(path_to_checkpoints: str, link_keys=['link1', 'link2', 'link3', 'link4'], real_data=True, *args, **kwargs) -> str
+'''
+    The main function preparing checkpoints for pre-trained SinGANs of Polyp images.
+    
+    Parameters
+    -----------
+    path_to_checkpoints: str
+        A directory path to download checkpoints. 
+    link_keys: list
+        A list of link keys: link1, link2, link3, link4. One or multiple link keys can be put in this list. 
+    real_data: bool
+        If True, the real images and masks used to train SinGANs will be downloaded to the checkpoint directory.  
+    
+    Return
+    ------
+    checkpoint_paths_list, real_image_mask_pair_list
+        A sorted list of paths to downloaded checkpoints.
+        A sorted (image_path, mask_path) tuple list.
+'''
 ```
 
 ```python

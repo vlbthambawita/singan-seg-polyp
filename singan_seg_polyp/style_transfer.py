@@ -73,9 +73,23 @@ def transfer_style(content_img_path: str, style_img_path: str, num_epochs: int, 
         A path to an image which has the required style to be transferred.
     num_epochs: int
         Number of epoch to iterate for transfering style to content image.
+    content_weight: int
+        Weight to keep the content of the destination image.
+    style_weight: int
+        Weight to transfer style from the source image.
+    device: torch.device
+        Torch device object, either "CPU" or "CUDA". Refer Pytoch documentation for more detials.
+    vgg_model: str
+        A model to extract features.
+    verbose: bool
+        If true, loss values will be printed to stdout.
+    
+
 
     Return
     =======
+    PIL.Image
+        Style transferred image.
     
     '''
     
@@ -155,6 +169,39 @@ def transfer_style(content_img_path: str, style_img_path: str, num_epochs: int, 
 
 def transfer_style_to_folder(generated_img_dir_path, real_img_dir_path,  output_dir, num_epochs: int, content_weight: int, style_weight: int, 
                    device: torch.device, vgg_model:str, verbose=False, *args, **kwargs):
+
+    ''' Trnsfering style from source image folder to target image folder.
+    
+    Parameters
+    ==========
+
+    generated_img_dir_path: str
+        A path to a folder which has generated images from the generative funtions of this library (Don't rename the original file names).
+    real_img_dir_path: str
+        A path of the real image folder dowloaded into the checkpoint folder by this library (check the checkpoint directory given to download the checkpoints).
+    output_dir: str
+        A path to save style transferred images.
+    num_epochs: int
+        Number of epoch to iterate for transfering style to content image.
+    content_weight: int
+        Weight to keep the content of the destination image.
+    style_weight: int
+        Weight to transfer style from the source image.
+    device: torch.device
+        Torch device object, either "CPU" or "CUDA". Refer Pytoch documentation for more detials.
+    vgg_model: str
+        A model to extract features.
+    verbose: bool
+        If true, loss values will be printed to stdout.
+    
+
+
+    Return
+    =======
+    None
+        There is no return from this function.
+    
+    '''
     
     generated_images = os.listdir(generated_img_dir_path)
     real_images = os.listdir(real_img_dir_path)
