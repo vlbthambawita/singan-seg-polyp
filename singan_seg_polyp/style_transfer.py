@@ -66,9 +66,14 @@ def transfer_style(content_img_path: str, style_img_path: str, num_epochs: int, 
     
     Parameters
     ==========
-    
-    
-    
+
+    content_img_path: str
+        A path to an image to which the style is going to be transfered.
+    style_img: str
+        A path to an image which has the required style to be transferred.
+    num_epochs: int
+        Number of epoch to iterate for transfering style to content image.
+
     Return
     =======
     
