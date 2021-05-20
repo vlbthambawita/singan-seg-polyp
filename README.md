@@ -2,12 +2,12 @@
 
 ## Install pip singan-polyp-aug
 ```shell
-pip install singan-polyp-aug
+pip install singan-seg-polyp
 ```
 
 ## Import required packages
 ```python
-from singan_polyp_aug import generate_data, prepare_requirements
+from singan_seg_polyp import generate_data, prepare_requirements
 ```
 ---
 ## Prepare checkpoints

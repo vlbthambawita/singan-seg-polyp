@@ -5,10 +5,10 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="singan-seg-polyp", # Replace with your own username
-    version="1.0.0",
+    version="1.0.1",
     author="Vajira Thambawita",
     author_email="vlbthambawita@gmail.com",
-    description="Generating synthetic polyps and corresponding mask using pretrained SinGANs.",
+    description="Generating synthetic polyps and corresponding mask using pretrained SinGAN-Seg and Style tranfering functionalities.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/vlbthambawita/singan-polyp-aug",
