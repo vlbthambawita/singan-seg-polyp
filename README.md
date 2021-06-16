@@ -1,6 +1,6 @@
-# singan-polyp-aug
+# singan-seg-polyp
 
-## Install pip singan-polyp-aug
+## Install pip package
 ```shell
 pip install singan-seg-polyp
 ```
@@ -137,7 +137,41 @@ generate_data.generate_simple(out_dir:str, chk_dir:str, *args, **kwargs)-> None:
 ```
 
 
-## Simple generation function
+## Transfering style from real to fake
+```Python
+help(style_transfer.transfer_style)
+
+transfer_style(content_img_path: str, style_img_path: str, num_epochs: int, content_weight: int, style_weight: int, device: torch.device, vgg_model: str, verbose=False, tqdm_position=0, tqdm_leave=True, *args, **kwargs) -> 'PIL.Image' 
+    Trnsfering style from a source image to a target image.
+    
+    Parameters
+    ==========
+    
+    content_img_path: str
+        A path to an image to which the style is going to be transfered.
+    style_img: str
+        A path to an image which has the required style to be transferred.
+    num_epochs: int
+        Number of epoch to iterate for transfering style to content image.
+    content_weight: int
+        Weight to keep the content of the destination image.
+    style_weight: int
+        Weight to transfer style from the source image.
+    device: torch.device
+        Torch device object, either "CPU" or "CUDA". Refer Pytoch documentation for more detials.
+    vgg_model: str
+        A model to extract features.
+    verbose: bool
+        If true, loss values will be printed to stdout.
+    
+    
+    
+    Return
+    =======
+    PIL.Image
+        Style transferred image.
+```
+
 
 
 ----
