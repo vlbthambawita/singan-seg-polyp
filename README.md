@@ -176,8 +176,13 @@ transfer_style(content_img_path: str, style_img_path: str, num_epochs: int, cont
 
 ----
 ### Citation:
-```
-TBA
+```latex
+@article{thambawita2021singan,
+  title={SinGAN-Seg: Synthetic Training Data Generation for Medical Image Segmentation},
+  author={Thambawita, Vajira and Salehi, Pegah and Sheshkal, Sajad Amouei and Hicks, Steven A and Hammer, Hugo L and Parasa, Sravanthi and de Lange, Thomas and Halvorsen, P{\aa}l and Riegler, Michael A},
+  journal={arXiv preprint arXiv:2107.00471},
+  year={2021}
+}
 ```
 
 ### References:
