@@ -4,13 +4,13 @@ import pandas as pd
 from tqdm import tqdm
 import time
 
-from singan_polyp_aug.config import get_arguments
-from singan_polyp_aug.SinGAN.manipulate import *
-from singan_polyp_aug.SinGAN.training import *
-from singan_polyp_aug.SinGAN.imresize import imresize
-import singan_polyp_aug.SinGAN.functions as functions
+from singan_seg_polyp.config import get_arguments
+from singan_seg_polyp.SinGAN.manipulate import *
+from singan_seg_polyp.SinGAN.training import *
+from singan_seg_polyp.SinGAN.imresize import imresize
+import singan_seg_polyp.SinGAN.functions as functions
 
-from singan_polyp_aug.prepare_requirements import prepare_checkpoints
+from singan_seg_polyp.prepare_requirements import prepare_checkpoints
 
 def generate_from_single_checkpoint(out_dir:str, 
                                     checkpoint_path:str, 
