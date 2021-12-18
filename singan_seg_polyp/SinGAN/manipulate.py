@@ -1,10 +1,10 @@
 from __future__ import print_function
-import singan_polyp_aug.SinGAN.functions
-import singan_polyp_aug.SinGAN.models
+import singan_seg_polyp.SinGAN.functions
+import singan_seg_polyp.SinGAN.models
 import argparse
 import os
 import random
-from singan_polyp_aug.SinGAN.imresize import imresize
+from singan_seg_polyp.SinGAN.imresize import imresize
 import torch.nn as nn
 import torch.optim as optim
 import torch.utils.data
@@ -17,7 +17,7 @@ from skimage import color
 import math
 import imageio
 import matplotlib.pyplot as plt
-from singan_polyp_aug.SinGAN.training import *
+from singan_seg_polyp.SinGAN.training import *
 #from config import get_arguments
 
 def generate_gif(Gs,Zs,reals,NoiseAmp,opt,alpha=0.1,beta=0.9,start_scale=2,fps=10):

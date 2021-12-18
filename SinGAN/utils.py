@@ -1,12 +1,12 @@
 
 import os
 import sys
-#singan_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)))
-#print(singan_dir)
-#sys.path.append(singan_dir)
+singan_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)))
+print(singan_dir)
+sys.path.append(singan_dir)
 
 
-import singan_seg_polyp.SinGAN
+import SinGAN
 
 import torch
 

@@ -1,12 +1,12 @@
-import singan_seg_polyp.SinGAN.functions as functions
-import singan_seg_polyp.SinGAN.models as models
+import SinGAN.functions as functions
+import SinGAN.models as models
 import os
 import torch.nn as nn
 import torch.optim as optim
 import torch.utils.data
 import math
 import matplotlib.pyplot as plt
-from singan_seg_polyp.SinGAN.imresize import imresize
+from SinGAN.imresize import imresize
 
 def train(opt,Gs,Zs,reals,NoiseAmp):
     real_ = functions.read_image(opt)

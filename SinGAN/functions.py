@@ -9,7 +9,7 @@ from skimage import io as img
 from skimage import color, morphology, filters
 #from skimage import morphology
 #from skimage import filters
-from singan_seg_polyp.SinGAN.imresize import imresize
+from SinGAN.imresize import imresize
 import os
 import random
 from sklearn.cluster import KMeans
@@ -164,24 +164,7 @@ def read_image(opt):
     #print("x in read image===", x.shape)
     return x
 
-def read_image_from_path(path, opt):
-    x = img.imread(path, opt)
-
-    #print("X shape=", x.shape)
-    if len(x.shape) == 2: # executee if imag is gray
-        x = color.gray2rgb(x)
-    #print("x after imread===", x.shape)
-    x = np2torch(x,opt)
-    #print("x after np2torch===", x.shape)
-    #print(" x.shape[1]=", x.shape[1])
-    if x.shape[1] == 4:
-        x = x[:,0:4,:,:]    
-    else:
-        x = x[:,0:3,:,:]
-    #print("x in read image===", x.shape)
-    return x
-
-def read_image_dir(dir):
+def read_image_dir(dir,opt):
     x = img.imread('%s' % (dir))
     x = np2torch(x,opt)
     x = x[:,0:3,:,:]
@@ -266,6 +249,7 @@ def load_trained_pyramid(opt, mode_='train'):
     if (mode == 'animation_train') | (mode == 'SR_train') | (mode == 'paint_train'):
         opt.mode = mode
     dir = generate_dir2save(opt)
+    print("dir=", dir)
     if(os.path.exists(dir)):
         Gs = torch.load('%s/Gs.pth' % dir)
         Zs = torch.load('%s/Zs.pth' % dir)
@@ -325,7 +309,7 @@ def post_config(opt):
 
     if opt.manualSeed is None:
         opt.manualSeed = random.randint(1, 10000)
-    #print("Random Seed: ", opt.manualSeed)
+    print("Random Seed: ", opt.manualSeed)
     random.seed(opt.manualSeed)
     torch.manual_seed(opt.manualSeed)
     if torch.cuda.is_available() and opt.not_cuda:
