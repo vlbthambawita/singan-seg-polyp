@@ -1,6 +1,6 @@
 # singan-seg-polyp
 
-## If you want to train your own SinGAN-Seg models, please follow the repository here: https://github.com/vlbthambawita/singan-seg
+## If you want to train your own SinGAN-Seg models, please follow the repository here: https://github.com/vlbthambawita/singan-seg-polyp
 
 ## Install pip package
 ```shell
