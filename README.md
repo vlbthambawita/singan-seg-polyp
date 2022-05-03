@@ -1,4 +1,9 @@
+ 
+
 # singan-seg-polyp
+This is the official repository for the paper titled: SinGAN-Seg: Synthetic training data generation for medical image segmentation 
+
+[# Paper](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0267976)
 
 ## If you want to train your own SinGAN-Seg models, please follow the repository here: https://github.com/vlbthambawita/singan-seg
 
@@ -179,11 +184,19 @@ transfer_style(content_img_path: str, style_img_path: str, num_epochs: int, cont
 ----
 ### Citation:
 ```latex
-@article{thambawita2021singan,
-  title={SinGAN-Seg: Synthetic Training Data Generation for Medical Image Segmentation},
-  author={Thambawita, Vajira and Salehi, Pegah and Sheshkal, Sajad Amouei and Hicks, Steven A and Hammer, Hugo L and Parasa, Sravanthi and de Lange, Thomas and Halvorsen, P{\aa}l and Riegler, Michael A},
-  journal={arXiv preprint arXiv:2107.00471},
-  year={2021}
+@article{10.1371/journal.pone.0267976,
+    doi = {10.1371/journal.pone.0267976},
+    author = {Thambawita, Vajira AND Salehi, Pegah AND Sheshkal, Sajad Amouei AND Hicks, Steven A. AND Hammer, Hugo L. AND Parasa, Sravanthi AND Lange, Thomas de AND Halvorsen, Pål AND Riegler, Michael A.},
+    journal = {PLOS ONE},
+    publisher = {Public Library of Science},
+    title = {SinGAN-Seg: Synthetic training data generation for medical image segmentation},
+    year = {2022},
+    month = {05},
+    volume = {17},
+    url = {https://doi.org/10.1371/journal.pone.0267976},
+    pages = {1-24},
+    number = {5},
+
 }
 ```
 
