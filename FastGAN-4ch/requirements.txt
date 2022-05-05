@@ -1,0 +1,11 @@
+
+tqdm==4.56.0 
+scipy==1.6.0 
+scikit-image==0.18.2
+ipdb==0.13.4
+pandas==1.2.1
+lmdb==1.0.0
+opencv-python==4.5.1.48
+easing-functions==1.0.4
+torch
+torchvision

@@ -3,7 +3,7 @@
 # singan-seg-polyp
 This is the official repository for the paper titled: SinGAN-Seg: Synthetic training data generation for medical image segmentation 
 
-## [Paper](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0267976)
+## [Paper](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0267976) | [![PyPI version](https://badge.fury.io/py/singan-seg-polyp.svg)](https://badge.fury.io/py/singan-seg-polyp)
 
 ## If you want to train your own SinGAN-Seg models, please follow the repository here: https://github.com/vlbthambawita/singan-seg
 
