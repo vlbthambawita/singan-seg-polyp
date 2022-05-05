@@ -180,7 +180,7 @@ transfer_style(content_img_path: str, style_img_path: str, num_epochs: int, cont
 ```
 # To reproduce the results of other GANs in the paper 
 Use the addition codes provided in DCGAN-4ch, FastGAN-4ch and ProGAN-4ch folders.
-![link_to_checkpoints](https://github.com/vlbthambawita/singan-seg-polyp/releases/tag/v1.0.0)
+[link_to_checkpoints](https://github.com/vlbthambawita/singan-seg-polyp/releases/tag/v1.0.0)
 
 ----
 ### Citation:
