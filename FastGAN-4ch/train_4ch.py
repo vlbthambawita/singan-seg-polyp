@@ -21,7 +21,9 @@ from custom_data import ImageAndMaskDataFromSinGAN
 
 policy = 'color,translation'
 import lpips
-percept = lpips.PerceptualLoss(model='net-lin', net='vgg', use_gpu=True)
+#percept = lpips.PerceptualLoss(model='net-lin', net='vgg', use_gpu=True)
+percept = lpips.LPIPS(net='vgg')
+percept = percept.cuda()
 
 
 #torch.backends.cudnn.benchmark = True
@@ -103,7 +105,7 @@ def train(args):
     #else:
         #dataset = ImageFolder(root=data_root, transform=trans)
     dataset = ImageAndMaskDataFromSinGAN(args.path_img, args.path_mask, transform=trans)
-    #print("dataset size=", len(dataset))
+    print("dataset size=", len(dataset))
     if args.num_imgs_to_train == -1 :
         dataset = Subset(dataset, [i for i in range(0, len(dataset))])
     else:
@@ -218,8 +220,8 @@ if __name__ == "__main__":
     parser.add_argument('--ckpt', type=str, default='None', help='checkpoint weight path if have one')
     # new parameters- added to process 4 channels data
     parser.add_argument("--nc", type=int, default=4, help="number of channels in input images")
-    parser.add_argument("--path_img", default="/work/vajira/DATA/kvasir_seg/real_images_root/real_images", help="image directory")
-    parser.add_argument("--path_mask", default="/work/vajira/DATA/kvasir_seg/real_masks_root/real_masks", help = "mask directory")
+    parser.add_argument("--path_img", default="/work/vajira/data/Kvasir-SEG/images", help="image directory")
+    parser.add_argument("--path_mask", default="/work/vajira/data/Kvasir-SEG/masks", help = "mask directory")
     parser.add_argument("--num_imgs_to_train", default=5, type=int, help="number of samples to train. -1 for use all")
 
 

@@ -161,9 +161,10 @@ class ImageAndMaskDataFromSinGAN(Dataset):
 
 if __name__ == "__main__":
 
-    dataset = ImageAndMaskDataFromSinGAN("/work/vajira/DATA/kvasir_seg/real_images_root/real_images", 
-                                "/work/vajira/DATA/kvasir_seg/real_masks_root/real_masks")
+    dataset = ImageAndMaskDataFromSinGAN("/work/vajira/data/Kvasir-SEG/images", 
+                                "/work/vajira/data/Kvasir-SEG/masks")
 
+    print(len(dataset))
     print(dataset[1].shape)
 
     #cv2.imwrite("test.png", dataset[1])
